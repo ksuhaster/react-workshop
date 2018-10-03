@@ -83,7 +83,7 @@ npm install -g yo @lectrum/generator-ui
 8. Склонируй этот проект:
 
 ```bash
-git clone https://github.com/lectrum/react-workshop.git
+git clone https://github.com/Lectrum/react-workshop.git
 ```
 
 9. Перейди в проект, выполнив команду:
