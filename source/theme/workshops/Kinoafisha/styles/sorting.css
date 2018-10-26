@@ -1,0 +1,44 @@
+.sorting {
+    display: flex;
+    justify-content: flex-end;
+    max-width: 1152px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 30px;
+    padding-right: 34px;
+    padding-left: 34px;
+
+    & div {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        margin-right: 10px;
+
+        & span {
+            margin-right: 7px;
+            font-size: 26px;
+            font-weight: 600;
+            color: var(--paletteColor2);
+        }
+
+        & button {
+            width: 25px;
+            height: 15px;
+            border: 0;
+            outline: 0;
+            background-image: url(../images/arrow.svg);
+            background-color: transparent;
+            transition: transform 0.3s ease-out;
+            cursor: pointer;
+        }
+    }
+
+    & .desc {
+        transform: rotate(180deg);
+    }
+
+    @media (--phonePortrait), (--phoneLandscape) {
+        padding-right: 14px;
+        padding-left: 14px;
+    }
+}

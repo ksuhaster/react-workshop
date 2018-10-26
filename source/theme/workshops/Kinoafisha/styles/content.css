@@ -1,0 +1,110 @@
+.content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1152px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 34px;
+    cursor: pointer;
+
+    & .movie {
+        width: 224px;
+        transition: transform 0.3s ease;
+        margin-bottom: 76px;
+        margin-right: 34px;
+
+        &:hover {
+            transform: translateY(-3px);
+        }
+
+        & .genre {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 30px;
+            width: 100%;
+            background-color: var(--paletteColor11);
+            color: var(--paletteColor2);
+            font-size: 22px;
+            font-weight: 600;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+
+        & .poster {
+            position: relative;
+            height: 340px;
+            overflow: hidden;
+            margin-bottom: 27px;
+
+            &:before {
+                position: absolute;
+                content: '';
+                left: 0;
+                bottom: 0;
+                right: 0;
+                height: 55px;
+                background: linear-gradient(
+                    to top,
+                    black,
+                    cubic-bezier(0.48, 0.46, 0.46, 0.68),
+                    transparent
+                );
+            }
+
+            & img {
+                width: 100%;
+                height: 100%;
+            }
+
+            & .rating {
+                position: absolute;
+                right: 0;
+                left: 0;
+                bottom: 7px;
+                color: var(--paletteColor2);
+                font-size: 40px;
+                font-weight: 700;
+                text-align: center;
+            }
+        }
+
+        & .title {
+            display: inline-block;
+            color: var(--paletteColor2);
+            font-size: 27px;
+            font-weight: 600;
+        }
+    }
+
+    @media (--phonePortrait), (--phoneLandscape) {
+        justify-content: space-between;
+        padding-right: 14px;
+        padding-left: 14px;
+
+        & .movie {
+            width: 130px;
+            margin-right: 0;
+            margin-bottom: 40px;
+
+            & .genre {
+                font-size: 14px;
+            }
+
+            & .poster {
+                height: 156px;
+                margin-bottom: 5px;
+
+                & .rating {
+                    font-size: 24px;
+                }
+            }
+
+            & .title {
+                font-size: 16px;
+                text-align: center;
+            }
+        }
+    }
+}

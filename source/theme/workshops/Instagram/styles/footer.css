@@ -1,6 +1,3 @@
-@import '../breakpoints';
-@import '../palette';
-
 .footer {
     display: flex;
     flex-direction: column;

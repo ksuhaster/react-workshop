@@ -1,5 +1,3 @@
-@import '../breakpoints';
-
 .header {
     display: flex;
     justify-content: space-between;
@@ -11,7 +9,7 @@
         display: inline-block;
         width: 176px;
         height: 35px;
-        background-image: url('./assets/logos/instagram-logo.png');
+        background-image: url('../assets/images/instagram-logo.png');
         background-repeat: no-repeat;
         background-size: 176px 35px;
         cursor: pointer;
@@ -26,7 +24,7 @@
         margin-top: 6px;
         font-size: 14px;
         color: var(--paletteColor4);
-        background-image: url('./assets/icons/search.png');
+        background-image: url('../assets/images/search.png');
         background-repeat: no-repeat;
         background-size: 10px 10px;
         background-position: 10px 50%;
@@ -49,15 +47,15 @@
         }
 
         & .explore {
-            background-image: url('./assets/icons/explore.png');
+            background-image: url('../assets/images/explore.png');
         }
 
         & .likes {
-            background-image: url('./assets/icons/likes.png');
+            background-image: url('../assets/images/likes.png');
         }
 
         & .settings {
-            background-image: url('./assets/icons/settings.png');
+            background-image: url('../assets/images/settings.png');
         }
     }
 

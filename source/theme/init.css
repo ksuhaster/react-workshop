@@ -1,17 +1,10 @@
 /* Core */
-@import 'sanitize.css';
+@import '~sanitize.css';
 
 /* Instruments */
-@import './palette';
-@import './globals';
+@import './palette.css';
+@import './globals.css';
 
 /* Components */
-@import './components/start';
-@import './components/header';
-@import './components/content';
-@import './components/profile';
-@import './components/stories';
-@import './components/story';
-@import './components/images';
-@import './components/image';
-@import './components/footer';
+@import './workshops/common/styles/welcome.css';
+@import './workshops/Kinoafisha/styles/main.css';

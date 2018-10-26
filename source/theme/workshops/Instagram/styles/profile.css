@@ -1,5 +1,3 @@
-@import '../breakpoints';
-
 .profile {
     display: flex;
     justify-content: flex-start;
@@ -43,7 +41,7 @@
                 height: 18px;
                 margin-top: 7px;
                 margin-left: 7px;
-                background-image: url('./assets/icons/confirmed.png');
+                background-image: url('../assets/images/confirmed.png');
             }
         }
 
