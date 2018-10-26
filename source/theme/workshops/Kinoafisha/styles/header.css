@@ -3,17 +3,22 @@
     margin-right: auto;
     margin-bottom: 80px;
     margin-left: auto;
-    padding-top: 32px;
+    padding-top: 34px;
     padding-right: 34px;
     padding-left: 34px;
 
     & .logo {
-        width: 400px;
+        width: 310px;
         height: 50px;
         margin-bottom: 50px;
-        color: var(--paletteColor2) j;
+        color: var(--paletteColor13);
         background-image: url('../images/logo.svg');
         cursor: pointer;
+        transition: filter 0.3s ease;
+
+        &:hover {
+            filter: brightness(0.6) sepia(1) hue-rotate(-10deg) saturate(5);
+        }
     }
 
     & .filters {
@@ -22,15 +27,13 @@
 
         & .filter {
             position: relative;
-            cursor: pointer;
-            max-width: 330px;
+            width: 100%;
             height: 170px;
-            overflow: hidden;
             box-shadow: 0px 1px 2px var(--paletteColor1);
-            z-index: 10;
-            border-width: 2px;
-            border-style: solid;
-            transition: border-color 0.3s ease;
+            background-size: 100%;
+            transition: outline 0.3s ease, transform 0.3s ease;
+            overflow: hidden;
+            cursor: pointer;
 
             &:before {
                 position: absolute;
@@ -47,27 +50,43 @@
                 );
             }
 
-            &:not(:last-child) {
-                margin-right: 47px;
+            &:hover {
+                transform: translateY(-3px);
             }
 
-            & img {
-                width: 100%;
+            &:active {
+                outline: 2px solid var(--paletteColor11);
+            }
+
+            &:first-child {
+                background-image: url('../images/filter-1.jpg');
+            }
+
+            &:nth-child(2) {
+                background-image: url('../images/filter-2.jpg');
+            }
+
+            &:last-child {
+                background-image: url('../images/filter-3.jpg');
+            }
+
+            &:not(:last-child) {
+                margin-right: 47px;
             }
 
             & span {
                 position: absolute;
                 right: 18px;
                 bottom: 8px;
-                color: var(--paletteColor2);
+                color: var(--paletteColor13);
                 font-size: 24px;
-                font-weight: 600;
+                font-weight: 700;
                 text-align: right;
             }
         }
 
-        & .selected {
-            border-color: var(--paletteColor2);
+        & .selectedFilter {
+            outline: 2px solid var(--paletteColor13);
         }
     }
 
@@ -82,14 +101,19 @@
         & .filters {
             display: flex;
             flex-direction: column;
+            align-items: center;
+            width: 100%;
+
             & .filter {
+                width: 100%;
+
                 &:not(:last-child) {
                     margin-right: 0;
                     margin-bottom: 15px;
                 }
 
                 & span {
-                    font-size: 22px;
+                    font-size: 26px;
                 }
             }
         }
@@ -98,7 +122,7 @@
     @media (--phonePortrait) {
         & .logo {
             width: 320px;
-            height: 40px;
+            height: 50px;
             margin-left: 30px;
         }
     }
@@ -106,7 +130,9 @@
     @media (--phoneLandscape) {
         & .filters {
             & .filter {
-                max-width: 430px;
+                max-width: 100%;
+                background-position: center -70px;
+
                 & span {
                     font-size: 26px;
                 }
