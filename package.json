@@ -4,8 +4,10 @@
     "author": "Dima Vakatsiienko <dvakatsiienko@lectrum.io>",
     "private": true,
     "dependencies": {
-        "react": "16.5.2",
-        "react-dom": "16.5.2",
-        "sanitize.css": "7.0.3"
+        "classnames": "2.2.6",
+        "react": "16.6.0",
+        "react-dom": "16.6.0",
+        "react-spring": "6.1.2",
+        "sanitize.css": "8.0.0"
     }
 }
