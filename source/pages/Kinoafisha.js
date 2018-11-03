@@ -21,7 +21,8 @@ export class Kinoafisha extends Component {
 
     _getMoviesByFilter = async (nextFilter) => {
         const movies = await api.getMovies(nextFilter);
-
+        console.log(movies);
+        //var sorted = movies.items.sort(function(a, b) {return a.release - b.release});
         this.setState({
             movies,
         });
@@ -35,6 +36,16 @@ export class Kinoafisha extends Component {
         });
 
         this._getMoviesByFilter(nextFilter);
+    };
+
+    _selectSort = (event) => {
+        const currentSort = event.currentTarget.className
+            ? 'desc'
+            : '';
+
+        this.className = currentSort;
+
+        //this._getMoviesByFilter(nextFilter, sort=currentSort);
     };
 
     _selectMovie = (movieId) => ( ) => {
@@ -67,22 +78,23 @@ export class Kinoafisha extends Component {
 
         const myFooter = (
             <>
-            <a href="mailto:team@lectrum.io">team@lectrum.io</a>
-            <span>
+                <a href = 'mailto:team@lectrum.io'>team@lectrum.io</a>
+                <span>
                     2018 © Все права защищены. Разработано с любовью&nbsp;
-                <a href="https://lectrum.io/intensive/react" rel="noreferrer noopener"
-                   target="_blank">в Лектруме</a>
+                    <a href = 'https://lectrum.io/intensive/react'
+                       rel = 'noreferrer noopener'
+                       target = '_blank'>в Лектруме</a>
                 </span>
-            <div className="social">
-                <a className="facebook"
-                   href="https://www.facebook.com/lectrum/"
-                   rel="noreferrer noopener"
-                   target="_blank"></a>
-                <a className="telegram"
-                   href="https://t.me/lectrum"
-                   rel="noreferrer noopener"
-                   target="_blank"></a>
-            </div>
+                <div className = 'social'>
+                    <a className = 'facebook'
+                       href = 'https://www.facebook.com/lectrum/'
+                       rel = 'noreferrer noopener'
+                       target = '_blank'></a>
+                    <a className = 'telegram'
+                       href = 'https://t.me/lectrum'
+                       rel = 'noreferrer noopener'
+                       target = '_blank'></a>
+                </div>
             </>
         );
 
@@ -106,6 +118,12 @@ export class Kinoafisha extends Component {
                         <span>В топ-чартах</span>
                     </div>
                 </div>
+            </div>
+            <div className = 'sorting'>
+                <button className = ''
+                        onClick = { this._selectSort }>
+                    по новизне
+                </button>
             </div>
             <div className = 'content'>{moviesJSX}</div>
             <div className = 'footer'>{myFooter}</div>
