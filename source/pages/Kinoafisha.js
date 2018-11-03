@@ -25,8 +25,9 @@ export class Kinoafisha extends Component {
         //console.log(movies);
         //const desc_sorted = movies.sort((a, b) => b.release - a.release);
         //console.log(desc_sorted);
+        var movies_sorted = movies.sort((a, b) => b.release - a.release);
         this.setState({
-            movies,
+            movies: movies_sorted,
         });
     };
 
