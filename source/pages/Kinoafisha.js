@@ -23,8 +23,8 @@ export class Kinoafisha extends Component {
     _getMoviesByFilter = async (nextFilter) => {
         const movies = await api.getMovies(nextFilter);
         console.log(movies);
-        //const sorted = movies.items.sort(function(a, b) {return a.release - b.release});
-        //console.log(sorted);
+        const desc_sorted = movies.sort((a, b) => b.release - a.release);
+        console.log(desc_sorted);
         this.setState({
             movies,
         });
