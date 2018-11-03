@@ -12,6 +12,7 @@ export class Kinoafisha extends Component {
     state = {
         selectedFilter: 'upcoming',
         selectedMovie: '',
+        selectedSort: '',
         movies: [],
     };
 
@@ -22,7 +23,8 @@ export class Kinoafisha extends Component {
     _getMoviesByFilter = async (nextFilter) => {
         const movies = await api.getMovies(nextFilter);
         console.log(movies);
-        //var sorted = movies.items.sort(function(a, b) {return a.release - b.release});
+        var sorted = movies.items.sort(function(a, b) {return a.release - b.release});
+        console.log(sorted)
         this.setState({
             movies,
         });
@@ -38,13 +40,14 @@ export class Kinoafisha extends Component {
         this._getMoviesByFilter(nextFilter);
     };
 
-    _selectSort = (event) => {
-        const currentSort = event.currentTarget.className
-            ? 'desc'
-            : '';
+    _toggleSort() {
+        const currentSort = this.state.selectedSort
+            ? ''
+            : 'desc';
 
-        this.className = currentSort;
-
+        this.setState({
+            selectedSort: currentSort,
+        });
         //this._getMoviesByFilter(nextFilter, sort=currentSort);
     };
 
@@ -120,8 +123,8 @@ export class Kinoafisha extends Component {
                 </div>
             </div>
             <div className = 'sorting'>
-                <button className = ''
-                        onClick = { this._selectSort }>
+                <button className = { this.state.selectedSort }
+                        onClick = { this._toggleSort }>
                     по новизне
                 </button>
             </div>
