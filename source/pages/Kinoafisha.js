@@ -22,9 +22,9 @@ export class Kinoafisha extends Component {
 
     _getMoviesByFilter = async (nextFilter) => {
         const movies = await api.getMovies(nextFilter);
-        console.log(movies);
-        const desc_sorted = movies.sort((a, b) => b.release - a.release);
-        console.log(desc_sorted);
+        //console.log(movies);
+        //const desc_sorted = movies.sort((a, b) => b.release - a.release);
+        //console.log(desc_sorted);
         this.setState({
             movies,
         });
@@ -44,11 +44,18 @@ export class Kinoafisha extends Component {
         const currentSort = this.state.selectedSort
             ? ''
             : 'desc';
-        console.log(currentSort);
+        //console.log(currentSort);
         this.setState({
             selectedSort: currentSort,
         });
-        //this._getMoviesByFilter(nextFilter, sort=currentSort);
+        if (currentSort === 'desc') {
+            var newmovies = this.state.movies.sort((a, b) => a.release - b.release);
+        } else {
+            var newmovies = this.state.movies.sort((a, b) => b.release - a.release);
+        }
+        this.setState({
+            movies: newmovies,
+        });
     };
 
     _selectMovie = (movieId) => ( ) => {
